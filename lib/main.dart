@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 //import 'package:flutter/widgets.dart';
 import 'screens/page1.dart';
+import 'screens/Text.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Gun(),
+      home: Textgun(),
     );
   }
 }
@@ -71,7 +72,8 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Container(
-            margin: const EdgeInsets.only(top: 10, left: 130), child: const Text('Home')),
+            margin: const EdgeInsets.only(top: 10, left: 130),
+            child: const Text('Home')),
         backgroundColor: Colors.yellow,
       ),
       body: Center(
@@ -111,16 +113,11 @@ class _HomePageState extends State<HomePage> {
                 ),
                 onChanged: (x) {
                   print(x);
+                  if (products.keys.contains(x)) {
+                    searchValue = products[x]['title'];
+                  }
                   setState(() {
-                    if (x == '') {
-                      searchValue = 'your search';
-                    } else {
-                      searchValue = x;
-                    }
-                    if (x == 'Shose') {}
-                    const SizedBox(
-                      height: 20,
-                    );
+                    searchValue = searchValue;
                   });
                 }),
           ],
