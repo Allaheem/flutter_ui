@@ -29,7 +29,7 @@ class Textgun extends StatelessWidget {
     child: Icon(Icons.add),
      ),
 
-      body: const Text('مرحبا لغة فلاتر',
+      body: const Text('Allaheem',
       
     maxLines:1 ,
     style: TextStyle(backgroundColor:Color.fromARGB(255, 255, 255, 255),fontSize: 33,color: Colors.blue,
