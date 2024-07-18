@@ -1,38 +1,21 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter/widgets.dart';
-import 'screens/page1.dart';
+
+
 import 'screens/Text.dart';
+
 
 void main() {
   runApp(MyApp());
-//  runApp(ByApp());
+
 }
 
-/*class ByApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: aboodApp(),
-    );
-  }
-}
 
-class aboodApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-      title: Text('alrameed'),
-      backgroundColor: Colors.black,
-    ));
-  }
-}*/
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home:Gun(),
+      home:Textgun(),
     );
   }
 }
@@ -126,7 +109,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
+     
 class SeconPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -138,6 +121,7 @@ class SeconPage extends StatelessWidget {
       body: const Center(
         child: Text("Secon page"),
       ),
+         
     );
   }
 }

@@ -3,51 +3,55 @@ import 'package:flutter/material.dart';
 void main() {}
 
 class Textgun extends StatelessWidget {
-  const Textgun({Key? key}) : super(key:key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-            elevation: 30,
-        title: const Text("A Weapon"), 
-        centerTitle: true,
-        backgroundColor: Colors.red,
-        leading:IconButton(onPressed: (){}, icon: const Icon(Icons.menu,size:30,color:Color.fromARGB(255, 30, 2, 0))),
-        
-          actions: [IconButton(onPressed: (){}, icon: Icon(Icons.message,size:30 ,color: Colors.black,)),
-          
-          
-          
-          IconButton(onPressed: (){}, icon: Icon(Icons.search,size:30 ,color: Colors.black)
-          )          
-          
-          
+        backgroundColor: Colors.blue,
+        elevation: 50, //تحدد ال appbar
+        title: Text(
+          'Guns',
+          style:
+              TextStyle(fontSize: 35, color: Color.fromARGB(255, 212, 15, 15)),
+        ),
+        centerTitle: true, //كتابة العنوان
+        leading: Row(
+          children: [
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.menu),
+              iconSize: 35,
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.vaccines),
+              iconSize: 35,
+            ),
           ],
+        ), //الايكون الموجودة على اليسار
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.comment),
+            iconSize: 35,
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.share),
+            iconSize: 35,
+          ),
+        ],
       ),
-     floatingActionButton: FloatingActionButton(
-    onPressed: (){},
-    child: Icon(Icons.add),
-     ),
-
-      body: const Text('Allaheem',
-      
-    maxLines:1 ,
-    style: TextStyle(backgroundColor:Color.fromARGB(255, 255, 255, 255),fontSize: 33,color: Colors.blue,
-    decoration: TextDecoration.underline,
-    fontStyle:FontStyle.italic ,
-    fontWeight: FontWeight.bold,
-    //height: 10,
-   letterSpacing: 2,
-   wordSpacing:4 ,
-  
-  
-    ),
-    overflow: TextOverflow.ellipsis,
-    //textAlign: TextAlign.right,
-    textDirection:TextDirection.rtl ,
-  
-      ),
-    ); 
-  }
+      body: Center(
+        
+          child: Text(
+        'helo allaheem👋',
+        style: TextStyle(
+          fontSize: 40,
+          color: Colors.red,
+        ),
+      )),
+        backgroundColor: Color.fromARGB(27, 250, 199, 144)
+    );
+  } //الكود الرئيسي لكل مشروع
 }
- 
