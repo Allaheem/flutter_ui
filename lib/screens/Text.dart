@@ -43,7 +43,6 @@ class Textgun extends StatelessWidget {
         ],
       ),
       body: Center(
-        
           child: Text(
         'helo allaheem👋',
         style: TextStyle(
@@ -51,7 +50,37 @@ class Textgun extends StatelessWidget {
           color: Colors.red,
         ),
       )),
-        backgroundColor: Color.fromARGB(27, 250, 199, 144)
+      backgroundColor: Color.fromARGB(27, 250, 199, 144),
     );
   } //الكود الرئيسي لكل مشروع
+}
+
+class menuf extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'this is a drawer page',
+          style: TextStyle(color: Colors.black),
+        ),
+      ),
+      drawer: Drawer(
+        backgroundColor: const Color.fromARGB(221, 107, 61, 61),
+        child: ListView(
+          children: [
+            DrawerHeader(
+                decoration:
+                    BoxDecoration(color:  Color.fromARGB(255, 153, 94, 90)),
+                    child: Text('this is the drawer menu'),),
+      ListTile(leading:               IconButton(onPressed: (){}, icon: Icon(Icons.settings),color: Colors.black,iconSize: 35,),
+      title: Text('settings'),
+      ),
+      
+
+          ],
+        ),
+      ),
+    );
+  }
 }
