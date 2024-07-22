@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
-void main() {}
+
+
+void main() {
+  
+}
 
 class Textgun extends StatelessWidget {
   @override
@@ -55,32 +59,129 @@ class Textgun extends StatelessWidget {
   } //الكود الرئيسي لكل مشروع
 }
 
-class menuf extends StatelessWidget {
+class DrawerScreen extends StatefulWidget {
+  @override
+  D createState() => D();
+}
+
+
+class D extends State<DrawerScreen> {
+  Widget screen = HomeScreen();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
           'this is a drawer page',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
         ),
       ),
       drawer: Drawer(
-        backgroundColor: const Color.fromARGB(221, 107, 61, 61),
+        backgroundColor: Color.fromARGB(249, 33, 14, 14),
         child: ListView(
+          padding: EdgeInsets.zero,
           children: [
-            DrawerHeader(
-                decoration:
-                    BoxDecoration(color:  Color.fromARGB(255, 153, 94, 90)),
-                    child: Text('this is the drawer menu'),),
-      ListTile(leading:               IconButton(onPressed: (){}, icon: Icon(Icons.settings),color: Colors.black,iconSize: 35,),
-      title: Text('settings'),
-      ),
-      
+            ListTile(
+              leading: Icon(
+                Icons.home,
+                color: Colors.white,
+                size: 32,
+              ),
+              onTap: () {
+                setState(() {
+                  screen = HomeScreen();
+                });
 
+                Navigator.of(context).pop();
+              },
+            ),
+            DrawerHeader(
+                decoration: BoxDecoration(color: Color.fromARGB(255, 0, 0, 0)),
+                child: Row(
+                  children: [
+                    Text(
+                      'this is the drawer menu',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
+                )),
+            ListTile(
+                leading: Icon(
+                  Icons.settings,
+                  size: 35,
+                ),
+                iconColor: Color.fromARGB(255, 193, 153, 153),
+                title: Text('settings', style: TextStyle(color: Colors.white)),
+                onTap: () {
+                  setState(() {
+                    screen = Settings();
+                  });
+                  Navigator.of(context).pop();
+                }),
+            ListTile(
+                leading: Icon(
+                  Icons.message,
+                  size: 32,
+                ),
+                iconColor: Color.fromARGB(255, 212, 164, 164),
+                title: Text('Messages', style: TextStyle(color: Colors.white)),
+                onTap: () {
+                  setState(() {
+                    screen = Messageas();
+                  });
+                  Navigator.of(context).pop();
+                }),
+            ListTile(
+                leading: Icon(
+                  Icons.account_circle,
+                  size: 32,
+                ),
+                iconColor: Color.fromARGB(255, 162, 115, 115),
+                title: Text('Profile', style: TextStyle(color: Colors.white)),
+                onTap: () {
+                  setState(() {
+                    screen = Profile();
+                  });
+                  Navigator.of(context).pop();
+                }),
           ],
         ),
       ),
+      body: Center(
+        child: screen,
+      ),
     );
+  }
+}
+
+class Messageas extends StatelessWidget {
+  @override
+  @override
+  Widget build(BuildContext context) {
+    return Text('this is massages page');
+  }
+}
+
+class Profile extends StatelessWidget {
+  @override
+  @override
+  Widget build(BuildContext context) {
+    return Text('this is profile page');
+  }
+}
+
+class Settings extends StatelessWidget {
+  @override
+  @override
+  Widget build(BuildContext context) {
+    return Text('this is settings page');
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  @override
+  @override
+  Widget build(BuildContext context) {
+    return Text('this is homescreen page');
   }
 }
