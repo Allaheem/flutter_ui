@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'screens/projikt.dart';
 
 import 'screens/Text.dart';
 
@@ -15,12 +15,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home:D(),
+      home:diverslist(),
     );
   }
 }
 
-class HomePage extends StatefulWidget {
+/*class HomePage extends StatefulWidget {
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -124,4 +124,4 @@ class SeconPage extends StatelessWidget {
          
     );
   }
-}
+}*/
