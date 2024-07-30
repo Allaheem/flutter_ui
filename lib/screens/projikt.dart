@@ -28,11 +28,11 @@ class diverslist extends StatelessWidget {
           children: [
             IconButton(
                 onPressed: () {
-                  Text('Back');
+                  Text('Back' ,style: TextStyle(fontSize: 15),);
                 },
                 icon: Icon(
                   Icons.arrow_back_ios,
-                  size: 25,
+                  size: 15,
                   color: const Color.fromARGB(255, 109, 102, 40),
                 )),
             //    title: TextButton(onPressed: (){}, child:Text('Back'),),
@@ -41,7 +41,7 @@ class diverslist extends StatelessWidget {
             ),
             GestureDetector(
               onTap: (){},
-          child: TextButton(onPressed: (){},child:Text('Back',style: TextStyle(fontSize: 25,color: Color.fromARGB(255, 109, 109, 36)),)),
+          child: TextButton(onPressed: (){},child:Text('Back',style: TextStyle(fontSize:15,color: Color.fromARGB(255, 109, 109, 36)),)),
             ),
           ],
         ),
@@ -71,7 +71,7 @@ backgroundColor: Color.fromARGB(197, 8, 0, 41),
         label: 'history',
       ),
     ],
-  ),
+  ), 
           
     ); 
   }

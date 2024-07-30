@@ -58,7 +58,7 @@ void main() {}
   } //الكود الرئيسي لكل مشروع
 }*/
 
-class DrawerScreen extends StatefulWidget {
+/*class DrawerScreen extends StatefulWidget {
   @override
   D createState() => D();
 }
@@ -283,4 +283,5 @@ class _ImagePageState extends State<ImagePage> {
       ],
     );
   }
-}
+}*/
+

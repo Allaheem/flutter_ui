@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screens/projikt.dart';
-
+import 'screens/Stak.dart';
 import 'screens/Text.dart';
 
 
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home:diverslist(),
+      home:MyHomePages(),
     );
   }
 }
