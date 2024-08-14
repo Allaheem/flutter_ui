@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'screens/projikt.dart';
 import 'screens/Stak.dart';
 import 'screens/Text.dart';
-
+import 'screens/login.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home:MyHomePages(),
+      home:Login(),
     );
   }
 }
