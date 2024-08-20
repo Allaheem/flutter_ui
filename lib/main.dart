@@ -5,20 +5,33 @@ import 'screens/Text.dart';
 import 'screens/login.dart';
 
 void main() {
-  runApp(MyApp());
-
+  runApp(Main());
 }
 
-
-
-class MyApp extends StatelessWidget {
+class Main extends StatelessWidget {
+  const Main({Key? Key}) : super(key: Key);
   @override
+  
+
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home:Login(),
+      return MaterialApp(
+        theme: ThemeData(
+          fontFamily: "OpenSans-Regular"
+        ),
+        debugShowCheckedModeBanner: false,
+      home: Login(),
     );
   }
 }
+
+/*class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Login(),
+    );
+  }
+}*/
 
 /*class HomePage extends StatefulWidget {
   @override
