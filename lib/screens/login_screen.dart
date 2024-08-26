@@ -22,7 +22,7 @@ class _Login extends State<Login> {
                     painter: HeaderPainter(),
                     child: SizedBox(
                       width: size.width,
-                      height: size.height / 3,
+                      height: size.height / 3 ,
                       child: const Center(
                         child: Text(
                           'BRAND ONE MOBEL',
@@ -39,7 +39,7 @@ class _Login extends State<Login> {
                         child: Image.network(
                           'https://dabegad.com/wp-content/uploads/2018/12/appleLogo-1.jpg',
                           width: 130,
-                          height: 130,
+                          height: size.height /6+8,
                           fit: BoxFit.cover,
                         ),
                       ),
