@@ -1,4 +1,7 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class AnmetedTextFild extends StatefulWidget {
   Color primaryColor, beginColor, endColor;
@@ -26,44 +29,76 @@ class _AnmetedTextFildState extends State<AnmetedTextFild>
   late AnimationController _animationController;
   late Animation _scaleAnimation;
   late Animation _colorAnimation;
+  FocusNode _focusNode = FocusNode();
   @override
   void initState() {
     super.initState();
     _animationController =
         AnimationController(vsync: this, duration: widget.duration);
     _scaleAnimation = Tween(
-      begin: 1,
-      end: 0,
+      begin: 1.0,
+      end: 0.0,
     ).animate(_animationController);
     _colorAnimation = ColorTween(begin: widget.beginColor, end: widget.endColor)
         .animate(_animationController);
+
+    _focusNode.addListener(_onTextFildFocusChange);
+
+    _animationController.addListener(() {
+      setState(() {});
+    });
+  }
+
+  void _onTextFildFocusChange() {
+    if (_focusNode.hasFocus) {
+      _animationController.forward();
+    } else {
+      _animationController.reverse();
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        width: 320,
-        height: 50,
+        width: 120,
+        height: 20,
         child: Stack(
           children: [
-            Container(
-              decoration: BoxDecoration(
-                color: widget.primaryColor,
-                borderRadius: BorderRadius.circular(10),
+            LayoutBuilder(builder: (_, Constraints) {
+              return Transform.scale(
+                scaleX: _scaleAnimation.value,
+                origin: Offset(Constraints.maxWidth / 2, 0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: widget.primaryColor,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              );
+            }),
+            Transform.scale(
+              scaleX: _scaleAnimation.value,
+              origin: Offset(60, 0),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: widget.primaryColor,
+                  borderRadius: BorderRadius.circular(10),
+                ),
               ),
             ),
             TextField(
+              focusNode: _focusNode,
               obscureText: widget.secureText,
               decoration: InputDecoration(
                 label: Text(
                   widget.label,
-                  style: const TextStyle(color: Colors.black),
+                  style: TextStyle(color: _colorAnimation.value),
                 ),
                 border: InputBorder.none,
                 focusedBorder: const OutlineInputBorder(),
-                icon: Icon(
+                prefixIcon: Icon(
                   widget.icon,
-                  color: Colors.black,
+                  color: _colorAnimation.value,
                 ),
               ),
             ),

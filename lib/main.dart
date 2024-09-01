@@ -24,14 +24,14 @@ class Main extends StatelessWidget {
   }
 }
 
-/*class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Login(),
+      home:  Login(),
     );
   }
-}*/
+}
 
 /*class HomePage extends StatefulWidget {
   @override
