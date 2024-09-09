@@ -1,8 +1,9 @@
-import 'dart:ffi';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+
+
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -10,13 +11,14 @@ class Login extends StatefulWidget {
 }
 
 class _Login extends State<Login> {
+
+  var facebook = FontAwesomeIcons.facebook;
+  var google = FontAwesomeIcons.google;
+  var slack = FontAwesomeIcons.slack; 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    var FontAwesomeIcon;
-    var facebook = FontAwesomeIcon.facebook;
-    var google = FontAwesomeIcon.google;
-    var slack = FontAwesomeIcon.slack;
+  
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -44,7 +46,7 @@ class _Login extends State<Login> {
                       onTap: () {},
                       child: ClipOval(
                         child: Image.network(
-                          'https://dabegad.com/wp-content/uploads/2018/12/appleLogo-1.jpg',
+                          'https://i.pinimg.com/236x/83/18/ba/8318bad68cea6fce96829770b0bb6978.jpg',
                           width: 130,
                           height: size.height / 6 + 8,
                           fit: BoxFit.cover,
@@ -55,7 +57,7 @@ class _Login extends State<Login> {
                 ],
               ),
             ),
-            const SizedBox(height: 30),
+            SizedBox(height: 30),
             AnimatedTextField(
               primaryColor: Colors.blueGrey,
               beginColor: Colors.white,
@@ -65,7 +67,8 @@ class _Login extends State<Login> {
               duration: const Duration(milliseconds: 300),
               secureText: false,
             ),
-            const SizedBox(
+            
+            SizedBox(
               height: 20,
             ),
             AnimatedTextField(
@@ -77,6 +80,7 @@ class _Login extends State<Login> {
               duration: const Duration(milliseconds: 300),
               secureText: true,
             ),
+            
             const SizedBox(
               height: 20,
             ),
@@ -121,20 +125,17 @@ class _Login extends State<Login> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   _buildSocialMediaBtn(
-                      color: const Color.fromARGB(255, 59, 89, 152),
-                      icon: facebook,
-                      
-                      ),
-                      _buildSocialMediaBtn(
-                      color: const Color.fromARGB(255, 219, 68, 55),
-                      icon: FontAwesomeIcon.google,
-                      
-                      ),
-                      _buildSocialMediaBtn(
-                      color: const Color.fromARGB(255, 74, 21, 75),
-                      icon: FontAwesomeIcon.slack,
-                      
-                      ),
+                    color: const Color.fromARGB(255, 59, 89, 152),
+                    icon: facebook,
+                  ),
+                  _buildSocialMediaBtn(
+                    color: const Color.fromARGB(255, 219, 68, 55),
+                    icon: google,
+                  ),
+                  _buildSocialMediaBtn(
+                    color: const Color.fromARGB(255, 74, 21, 75),
+                    icon: slack,
+                  ),
                 ],
               ),
             ),
@@ -158,11 +159,6 @@ class _Login extends State<Login> {
     );
   }
 
-  FaIcon(IconData icon, {required Color color}) {}
-}
-
-class SvgPicture {
-  static asset(String s, {required String semanticsLabel}) {}
 }
 
 class AnimatedTextField extends StatelessWidget {
@@ -188,13 +184,13 @@ class AnimatedTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         // Your custom text field widget implementation
-        );
+    );
   }
 }
 
 class HeaderPainter extends CustomPainter {
   @override
-  void paint(Canvas canvas, size) {
+  void paint(Canvas canvas, Size size) {
     var paint = Paint()..color = Colors.blueGrey;
     var path = Path();
     path.moveTo(0, 0);
