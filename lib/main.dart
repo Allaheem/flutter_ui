@@ -1,24 +1,28 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'screens/projikt.dart';
-import 'screens/Stak.dart';
-import 'screens/Text.dart';
+import 'package:flutter_ui/firebase_options.dart';
+
+
+
+
 import 'screens/login_screen.dart';
 
-void main() {
+void main() async {
   runApp(Main());
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+  );
+  
 }
 
 class Main extends StatelessWidget {
   const Main({Key? Key}) : super(key: Key);
   @override
-  
-
   Widget build(BuildContext context) {
-      return MaterialApp(
-        theme: ThemeData(
-          fontFamily: "OpenSans-Regular"
-        ),
-        debugShowCheckedModeBanner: false,
+    return MaterialApp(
+      theme: ThemeData(fontFamily: "OpenSans-Regular"),
+      debugShowCheckedModeBanner: false,
       home: Login(),
     );
   }
@@ -28,7 +32,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home:  Login(),
+      home: Login(),
     );
   }
 }
